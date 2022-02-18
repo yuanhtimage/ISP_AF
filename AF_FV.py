@@ -283,9 +283,9 @@ if __name__ == "__main__":
     
     iter_num = 0
     #listdir的参数是文件夹的路径
-    for filename in os.listdir(r"./input_image1"):
+    for filename in os.listdir(r"./input_image"):
         iter_num+=1             
-        filenames = os.getcwd() +'/input_image1/'+ filename
+        filenames = os.getcwd() +'/input_image/'+ filename
         img = cv.imread(filenames,0)
         img = ROI_Img(img,0.25,0.25)
         # result_EOG.append(Energy_of_Gradient(img))
