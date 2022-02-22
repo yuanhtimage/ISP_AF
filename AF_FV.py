@@ -287,23 +287,23 @@ if __name__ == "__main__":
         iter_num+=1             
         filenames = os.getcwd() +'/input_image/'+ filename
         img = cv.imread(filenames,0)
-        img = ROI_Img(img,0.25,0.25)
+        # img = ROI_Img(img,0.25,0.25)
         # result_EOG.append(Energy_of_Gradient(img))
         # result_Roberts.append(Roberts_AF(img))
         # result_Tenengrad.append(Tenengrad(img))
         # result_Brenner.append(Brenner(img))
         # result_Variance.append(Variance(img))
-        # result_Laplace.append(Laplace(img))
+        result_Laplace.append(Laplace(img))
         # result_SMD.append(SMD(img))
         # result_SMD2.append(SMD2(img))
 
         # result_FFT.append(FFT(img))
         # result_DCT.append(DCT(img))
 
-        result_Entropy.append(Entropy(img))
+        # result_Entropy.append(Entropy(img))
 
-        result_Vollaths.append(Vollaths(img))
-        result_Range.append(Range(img))
+        # result_Vollaths.append(Vollaths(img))
+        # result_Range.append(Range(img))
 
         # cv.namedWindow('input_image',cv.WINDOW_NORMAL)
         # cv.imshow('input_image', img)
@@ -316,17 +316,17 @@ if __name__ == "__main__":
     # plt.plot(np.arange(0,iter_num,1),normalization(result_Tenengrad), color = 'b', label = 'Tenengrad', marker = 'd') 
     # plt.plot(np.arange(0,iter_num,1),normalization(result_Brenner), color = 'y',label = 'Brenner', marker = '*')
     # plt.plot(np.arange(0,iter_num,1),normalization(result_Variance), color = 'c',label = 'Variance', marker = 's')
-    # plt.plot(np.arange(0,iter_num,1),normalization(result_Laplace), color = 'm',label = 'Laplace', marker = 'p')
+    plt.plot(np.arange(0,iter_num,1),normalization(result_Laplace), color = 'm',label = 'Laplace', marker = 'p')
     # plt.plot(np.arange(0,iter_num,1),normalization(result_SMD), color = 'k', label = 'SMD', marker = 'h') 
     # plt.plot(np.arange(0,iter_num,1),normalization(result_SMD2), color = 'pink', label = 'SMD2', marker = 'x') 
     
     # plt.plot(np.arange(0,iter_num,1),normalization(result_FFT), color = 'b',label = 'FFT', marker = 's')
     # plt.plot(np.arange(0,iter_num,1),normalization(result_DCT), color = 'r',label = 'DCT', marker = 'd')
     
-    plt.plot(np.arange(0,iter_num,1),normalization(result_Entropy), color = 'g',label = 'Entropy', marker = 'o')
+    # plt.plot(np.arange(0,iter_num,1),normalization(result_Entropy), color = 'g',label = 'Entropy', marker = 'o')
     
-    plt.plot(np.arange(0,iter_num,1),normalization(result_Vollaths), color = 'b',label = 'Vollaths', marker = 's')
-    plt.plot(np.arange(0,iter_num,1),normalization(result_Range), color = 'r',label = 'Range', marker = 'd')
+    # plt.plot(np.arange(0,iter_num,1),normalization(result_Vollaths), color = 'b',label = 'Vollaths', marker = 's')
+    # plt.plot(np.arange(0,iter_num,1),normalization(result_Range), color = 'r',label = 'Range', marker = 'd')
     plt.legend()
     plt.xlabel('Num of images')
     plt.ylabel('AF value')
